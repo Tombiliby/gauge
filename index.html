@@ -16,7 +16,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<svg viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:110px;">
-					<path id="path2" stroke="#e63d3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M31.109,59.05 C15.6307984,59.05 3.084,46.5032016 3.084,31.025 C3.084,15.5467984 15.6307984,3 31.109,3 C46.5872016,3 59.134,15.5467984 59.134,31.025 C59.134,45.8325123 47.6504896,57.9583577 33.1025287,58.9802047"></path>
+					<path id="path2" stroke="#e63d3d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M31.109,59.05 C15.6307984,59.05 3.084,46.5032016 3.084,31.025 C3.084,15.5467984 15.6307984,3 31.109,3 C46.5872016,3 59.134,15.5467984 59.134,31.025 C59.134,45.8325123 47.6504896,57.9583577 33.1025287,58.9802047"></path>
 				</svg>
 			</div>
 		</div>
@@ -26,8 +26,7 @@
 
 		<script>
 			(function(){
-				var segment1 = new Segment(document.getElementById('path2')),
-						segment2 = new Segment(document.getElementById('path3'));
+				var segment1 = new Segment(document.getElementById('path2'));
 
 		    var step2 = function(){
 		    	segment1.draw(5, "0% + 10", 0.5, { delay:0.2, easing: ease.ease("bounce-out", 1), callback: step3});
