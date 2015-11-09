@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<title>ORCHESTRA</title>
+		<link rel="stylesheet" href="./static/dist/css/style.css">
+		<link rel="stylesheet" href="./static/dist/css/fonts.css">
+		<link rel="stylesheet" href="./static/dist/css/iconic.css">
+	</head>
+	<body>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 474 200" style="width:130px;">
+      <path id="path" stroke="#2980b9" stroke-width="10px" fill="transparent" d="M10 100 C 40 200, 130 200, 160 100 S 280 0, 310 100 S 430 200, 460 100"/>
+    </svg>
+
+<svg viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:130px;">
+	<path id="path2" stroke="#5B5B5B" stroke-width="5" fill="transparent" d="M31.109,59.05 C15.6307984,59.05 3.084,46.5032016 3.084,31.025 C3.084,15.5467984 15.6307984,3 31.109,3 C46.5872016,3 59.134,15.5467984 59.134,31.025 C59.134,45.8325123 47.6504896,57.9583577 33.1025287,58.9802047"></path>
+</svg>
+		<script src="./static/dist/js/lib.min.js"></script>
+
+		<script>
+			(function(){
+				var path = document.getElementById('path2'),
+				    segment = new Segment(path),
+				    step2 = function(){
+				    	segment.draw(5, "0% + 10", 0.5, { delay:0.2, easing: ease.ease("bounce-out")});
+				    };
+				segment.draw(0, "0%", 0);
+				segment.draw(0, 100, 1, { delay:0, easing: ease.ease("back-out",1), callback: step2});
+			})();
+		</script>
+
+	</body>
+</html>
