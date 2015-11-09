@@ -12,24 +12,39 @@
 	</head>
 	<body>
 
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 474 200" style="width:130px;">
-      <path id="path" stroke="#2980b9" stroke-width="10px" fill="transparent" d="M10 100 C 40 200, 130 200, 160 100 S 280 0, 310 100 S 430 200, 460 100"/>
-    </svg>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<svg viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:130px;">
+					<path id="path2" stroke="#e63d3d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M31.109,59.05 C15.6307984,59.05 3.084,46.5032016 3.084,31.025 C3.084,15.5467984 15.6307984,3 31.109,3 C46.5872016,3 59.134,15.5467984 59.134,31.025 C59.134,45.8325123 47.6504896,57.9583577 33.1025287,58.9802047"></path>
+				</svg>
+			</div>
+			<div class="col-md-6">
+				<svg viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:130px;">
+					<path id="path3" stroke="red" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M31.109,59.05 C15.6307984,59.05 3.084,46.5032016 3.084,31.025 C3.084,15.5467984 15.6307984,3 31.109,3 C46.5872016,3 59.134,15.5467984 59.134,31.025 C59.134,45.8325123 47.6504896,57.9583577 33.1025287,58.9802047"></path>
+				</svg>
+			</div>	
+		</div>
+	</div>
 
-<svg viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:130px;">
-	<path id="path2" stroke="#5B5B5B" stroke-width="5" fill="transparent" d="M31.109,59.05 C15.6307984,59.05 3.084,46.5032016 3.084,31.025 C3.084,15.5467984 15.6307984,3 31.109,3 C46.5872016,3 59.134,15.5467984 59.134,31.025 C59.134,45.8325123 47.6504896,57.9583577 33.1025287,58.9802047"></path>
-</svg>
 		<script src="./static/dist/js/lib.min.js"></script>
 
 		<script>
 			(function(){
-				var path = document.getElementById('path2'),
-				    segment = new Segment(path),
-				    step2 = function(){
-				    	segment.draw(5, "0% + 10", 0.5, { delay:0.2, easing: ease.ease("bounce-out")});
-				    };
-				segment.draw(0, "0%", 0);
-				segment.draw(0, 100, 1, { delay:0, easing: ease.ease("back-out",1), callback: step2});
+				var segment1 = new Segment(document.getElementById('path2')),
+						segment2 = new Segment(document.getElementById('path3'));
+
+		    var step2 = function(){
+		    	segment1.draw(5, "0% + 10", 0.5, { delay:0.2, easing: ease.ease("bounce-out", 1), callback: step3});
+		    	
+		    };
+		    var step3 = function(){
+		    	segment1.draw(0, "100%", 0.5, { delay:0.2, easing: ease.ease("bounce-out", 1), callback: step3});
+		    };
+
+				segment1.draw(0, "0%", 0);
+				segment1.draw(0, 100, 1, { delay:0, easing: ease.ease("elastic-out", 0, 0.5)/*, callback: step2*/});
+
 			})();
 		</script>
 
